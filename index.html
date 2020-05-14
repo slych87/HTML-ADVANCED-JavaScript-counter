@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            line-height: 100vh;
+            font-size: 60px;
+            text-align: center;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        span.counter {
+            font-weight: bold;
+        }
+
+        button:nth-of-type(1) {
+            position: fixed;
+            top: 50vh;
+            left: 50px;
+        }
+
+        button:nth-of-type(2) {
+            position: fixed;
+            top: 50vh;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Liczba kliknięć: <span class="counter">0</span>
+    </p>
+    <button>Dodaj</button>
+    <button>Odejmij</button>
+
+    <script>
+        //Potrzebne zmienne
+        let counter = 0;
+
+        //Pobieramy potrzebne elementy strony
+        const spanCounter = document.querySelector("span.counter");
+        const btnAdd = document.querySelector("button");
+        const btnMinus = document.querySelector("button:nth-of-type(2)")
+
+        //Nasłuchiwaie
+        btnAdd.addEventListener('click', function () {
+            counter++;
+            spanCounter.textContent = counter;
+        });
+
+        btnMinus.addEventListener('click', function () {
+            counter--;
+            console.log(counter);
+            spanCounter.textContent = counter;
+        });
+    </script>
+</body>
+
+</html>
